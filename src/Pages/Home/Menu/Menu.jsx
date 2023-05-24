@@ -1,29 +1,24 @@
-import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import './Menu.css'
+import useMenu from '../../../hooks/useMenu';
 
 const Menu = () => {
-
-    const [menus, setMenus] = useState([])
-    useEffect(() => {
-        fetch('menu.json')
-            .then(res => res.json())
-            .then(data => setMenus(data))
-    }, [])
+    const [menus] = useMenu();
+    const popular = menus.filter(menu => menu.category === 'popular')
 
     return (
         <div className='p-12'>
             <SectionTitle subheading={'---Check it Out'} heading={'From Our Menu'} />
 
             {
-                menus.length > 0 ?
+                popular.length > 0 ?
                     <div>
 
-                    <div className=' grid grid-cols-1 md:grid-cols-2 gap-5'>
-                        {
-                            menus.slice(0, 6).map(menu => (
+                        <div className=' grid grid-cols-1 md:grid-cols-2 gap-5'>
+                            {
+                                popular.slice(0, 6).map(menu => (
 
-                              
+
                                     <div className='flex justify-center items-center  gap-6' key={menu._id}>
                                         <div className='menuImage'>
                                             <img src={menu.image} width={90} alt="" />
@@ -36,16 +31,16 @@ const Menu = () => {
                                             <h3 className='text-warning'>${menu.price}</h3>
                                         </div>
                                     </div>
-                               
 
-                            ))
-                        }
-                     
-                    </div>
 
-                    <div className='flex justify-center mt-5'>
-                                <button className=' btn btn-info'>See More</button>
-                            </div>
+                                ))
+                            }
+
+                        </div>
+
+                        <div className='flex justify-center mt-5'>
+                            <button className=' btn btn-info'>See More</button>
+                        </div>
 
                     </div>
 
@@ -54,7 +49,7 @@ const Menu = () => {
 
                         <div className=' grid grid-cols-1 md:grid-cols-2 gap-5'>
                             {
-                                menus.slice(0, 6).map(menu => (
+                                popular.slice(0, 6).map(menu => (
 
                                     <div>
                                         <div className='flex justify-center items-center  gap-6' key={menu._id}>
