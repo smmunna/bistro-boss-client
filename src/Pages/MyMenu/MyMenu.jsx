@@ -23,7 +23,7 @@ const MyMenu = () => {
             <Cover title={'OUR MENU'} subtitle={'Would you like to try a dish?'} img={menuImg} />
             <Menu />
 
-            <Cover title={'OFFered MENU'} img={offerdImg} />
+            <Cover title={'Offered MENU'} img={offerdImg} />
             <MenuCategory items={offered} />
 
             <Cover title={'Dessert MENU'} img={dessertImg} />

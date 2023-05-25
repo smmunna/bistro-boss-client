@@ -4,7 +4,6 @@ import Cover from '../../Shared/Cover/Cover'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import useMenu from '../../hooks/useMenu'
 import OrderCard from '../Order/OrderCard';
-import MyMenu from '../MyMenu/MyMenu';
 
 const Order = () => {
     const [menus] = useMenu()

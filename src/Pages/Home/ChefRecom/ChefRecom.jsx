@@ -11,11 +11,12 @@ const ChefRecom = () => {
     return (
         <section className='mb-4'>
             <SectionTitle subheading={'---Should Try---'} heading={'Our Recommends'} />
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+            <div>
+            <div className='grid grid-cols-1 lg:grid-cols-3  gap-4'>
                 {
                     recom.map(reco => (
-                        <>
-                            <div key={reco._id} className="card card-compact w-96 bg-base-100 shadow-xl">
+                        <div key={reco._id}>
+                            <div className="card m-5 card-compact bg-base-200 shadow-xl">
                                 <figure><img src={reco.image} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{reco.name}</h2>
@@ -25,9 +26,10 @@ const ChefRecom = () => {
                                     </div>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     ))
                 }
+            </div>
             </div>
         </section>
     );

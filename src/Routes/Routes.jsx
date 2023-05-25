@@ -7,6 +7,8 @@ import MyMenu from "../Pages/MyMenu/MyMenu.jsx";
 import Order from "../Pages/Order/Order.jsx";
 import Login from "../Layout/Login/Login.jsx";
 import Register from "../Layout/Register/Register.jsx";
+import Secret from "../Pages/Secret.jsx";
+import PrivateRoutes from "../privateRoutes/PrivateRoutes.jsx";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path:'/order',
                 element:<Order/>
+            },
+            {
+                path:'/secret',
+                element:<PrivateRoutes><Secret/></PrivateRoutes>
             }
         ]
     },

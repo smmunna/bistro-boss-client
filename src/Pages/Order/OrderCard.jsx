@@ -3,7 +3,7 @@ import React from 'react';
 const OrderCard = ({ item }) => {
     const { _id, name, image, price } = item
     return (
-        <div className=" card w-96 bg-base-100 shadow-xl">
+        <div className=" card m-3 bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
                 <p className='absolute right-0 mr-5 mt-3 bg-black text-white p-2'>Price: ${price}</p>
             <div className="card-body">

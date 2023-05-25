@@ -21,7 +21,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="footer footer-center p-4 bg-base-300 text-base-content">
+            <div className="footer footer-center p-4 bg-black text-center text-white">
                 <div>
                     <p>Copyright © {year} - All right reserved by Sm Munna Ltd</p>
                 </div>

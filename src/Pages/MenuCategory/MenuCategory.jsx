@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MenuCategory = ({ items }) => {
     return (
-        <div className=' grid grid-cols-1 md:grid-cols-2 gap-5 my-5'>
+        <div className=' md:p-12 grid grid-cols-1 md:grid-cols-2 gap-5 my-5'>
             {
                 items.slice(0, 6).map(menu => (
 
