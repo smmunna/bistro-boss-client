@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { AuthContext } from '../../provider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const { createUser, updateUser } = useContext(AuthContext)
+    const navigate = useNavigate();
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        const email = data.email;
+        const password = data.password;
+        const name = data.displayName;
+        const photoURL = data.photoURL;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                updateUser(user, name, photoURL)
+                    .then(() => {
+                        navigate('/')
+                    }).catch((error) => {
+                        // An error occurred
+                        // ...
+                    });
+            })
+            .catch(error => {
+                console.log(error)
+            })
     };
     return (
         <div>

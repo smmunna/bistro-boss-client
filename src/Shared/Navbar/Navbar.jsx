@@ -1,15 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import cartIcon from '../../assets/icon/carticon.png'
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut, loading } = useContext(AuthContext)
+    const navigate = useNavigate()
+    if (!user && loading) {
+        return <div>Loading......</div>
+    }
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                navigate('/')
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
+
     const navlink = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/order'>Order</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/shop'>Our Shop</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+            user ?
+                <>
+                    <li><button onClick={handleLogout}>Logout</button></li>
+                    <div className="avatar">
+                        <div className="w-12">
+                            <img src={user?.photoURL} />
+                        </div>
+                    </div>
+                </>
+                :
+                <>
+                    <li><Link to='/login'>Login</Link></li>
+                </>
+        }
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-60 bg-black max-w-screen-xl text-white">
