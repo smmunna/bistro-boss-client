@@ -4,6 +4,7 @@ import App from './App.jsx'
 import "swiper/css";
 import "swiper/css/pagination";
 import './index.css'
+import 'react-tabs/style/react-tabs.css';
 import {
   RouterProvider,
 } from "react-router-dom";

@@ -5,10 +5,11 @@ import cartIcon from '../../assets/icon/carticon.png'
 const Navbar = () => {
     const navlink = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/contact'>Contact Us</Link></li>
+        <li><Link to='/order'>Order</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/shop'>Our Shop</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-60 bg-black max-w-screen-xl text-white">
