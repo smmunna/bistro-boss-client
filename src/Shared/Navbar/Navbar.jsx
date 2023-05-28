@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import cartIcon from '../../assets/icon/carticon.png'
 import { AuthContext } from '../../provider/AuthProvider';
+import useCart from '../../hooks/useCart';
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(AuthContext)
+    const [cart] = useCart()
+
     const navigate = useNavigate()
     if (!user && loading) {
         return <div>Loading......</div>
@@ -24,6 +27,13 @@ const Navbar = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/shop'>Our Shop</Link></li>
+        <li><Link to='/carts'>
+            <button className="flex items-center gap-2">
+                <img src={cartIcon} width={30} alt="" />
+                <div className="badge">+{cart?.length}</div>
+            </button>
+        </Link></li>
+
         {
             user ?
                 <>

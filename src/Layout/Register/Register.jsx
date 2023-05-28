@@ -33,7 +33,6 @@ const Register = () => {
             })
             .catch(error => {
                 const errorMsg = error.message;
-                console.log(errorMsg)
                 if (errorMsg == 'Firebase: Error (auth/email-already-in-use).') {
                     setMailError('Email is already is in use..!')
                     return
