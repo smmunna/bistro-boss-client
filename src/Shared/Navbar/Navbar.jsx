@@ -27,7 +27,7 @@ const Navbar = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/shop'>Our Shop</Link></li>
-        <li><Link to='/carts'>
+        <li><Link to='/dashboard/mycarts'>
             <button className="flex items-center gap-2">
                 <img src={cartIcon} width={30} alt="" />
                 <div className="badge">+{cart?.length}</div>

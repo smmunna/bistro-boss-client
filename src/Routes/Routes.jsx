@@ -9,6 +9,8 @@ import Login from "../Layout/Login/Login.jsx";
 import Register from "../Layout/Register/Register.jsx";
 import Secret from "../Pages/Secret.jsx";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes.jsx";
+import Dashboard from "../Layout/Dashboard.jsx";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart.jsx";
 
 const router = createBrowserRouter([
     {
@@ -20,26 +22,36 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path:'/menu',
-                element:<MyMenu/>
+                path: '/menu',
+                element: <MyMenu />
             },
             {
-                path:'/order',
-                element:<Order/>
+                path: '/order',
+                element: <Order />
             },
             {
-                path:'/secret',
-                element:<PrivateRoutes><Secret/></PrivateRoutes>
+                path: '/secret',
+                element: <PrivateRoutes><Secret /></PrivateRoutes>
+            }
+        ],
+    },
+    {
+        path: '/login',
+        element: <Login />
+    },
+    {
+        path: '/register',
+        element: <Register />
+    },
+    {
+        path: 'dashboard',
+        element: <Dashboard />,
+        children: [
+            {
+                path: 'mycarts',
+                element: <MyCart />
             }
         ]
-    },
-    {
-        path:'/login',
-        element:<Login/>
-    },
-    {
-        path:'/register',
-        element:<Register/>
     }
 ]);
 
