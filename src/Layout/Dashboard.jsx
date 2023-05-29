@@ -20,6 +20,7 @@ const Dashboard = () => {
                     <li><Link><FaCalendarAlt/> Reservation</Link></li>
                     <li><Link><FaCartPlus/> Payment History</Link></li>
                     <li><Link to="/dashboard/mycarts">My Cart</Link></li>
+                    <li><Link to="/dashboard/addproducts">Add Products</Link></li>
                 </ul>
 
             </div>

@@ -11,6 +11,7 @@ import Secret from "../Pages/Secret.jsx";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes.jsx";
 import Dashboard from "../Layout/Dashboard.jsx";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart.jsx";
+import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts.jsx";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: 'mycarts',
                 element: <MyCart />
+            },
+            {
+                path:'addproducts',
+                element:<AddProducts/>
             }
         ]
     }

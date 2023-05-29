@@ -18,7 +18,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user)
+                // console.log(user)
                 if (user) {
                     navigate(from, { replace: true })
                 }
